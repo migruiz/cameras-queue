@@ -1,10 +1,9 @@
-FROM resin/raspberrypi3-debian
+FROM balenalib/raspberrypi3-alpine
 RUN [ "cross-build-start" ]
 
 
-
-RUN apt-get update && \
-apt-get install -yqq --no-install-recommends mosquitto  && rm -rf /var/lib/apt/lists/*
+#4.1.3
+RUN apk add --update mosquitto 
 
 
 
